@@ -1,3 +1,3 @@
-PORT 
-DB_URL
-secret
+PORT (variable name for PORT in .env file)
+DB_URL (variable name for mongoDB url in .env file)
+secret (variable name for secret code for token in .env file)
