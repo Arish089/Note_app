@@ -1,0 +1,23 @@
+optimizations
+1. we need to implement authentication using auth.middleware.js
+2. problem => any authenticated user can do CRUD notes created by some other person.
+solution => authorization
+
+relationships
+
+save id of dependent entity in independent entity
+
+relationships: 
+
+In notes schema we should store user id => which note belongs to which user
+
+one user can have multiple notes (one to many relationships).
+
+req => payload => middleware first => create note route
+
+middleware => decoded => userDetails
+
+Platforms for Deployment of backend:
+1. Cyclic (evaluation) - one deployment only
+2. Railway
+3. Render
