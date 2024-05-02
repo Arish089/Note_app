@@ -11,16 +11,16 @@ const {username, email, password} = req.body;
 try {
     bcrypt.hash(password, 4, async(err, hashesPassword)=>{
         if(err){
-            res.status(500).send({
+            res.status(500).json({
                 message:"Error while hashing the password"
             });
         }
         const user = new UserModel({username, email, password: hashesPassword});
         await user.save();
-        res.status(201).send({message:"User registered successfully"})
+        res.status(200).json({message:"User registered successfully"})
     })
 } catch (error) {
-    res.status(400).send({message:"Error while registering the user",error})
+    res.status(400).json({message:"Error while registering the user",error})
 }
 })
 

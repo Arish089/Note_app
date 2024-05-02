@@ -23,7 +23,7 @@ noteRouter.get('/',auth, async(req, res)=>{
         const notes = await notesModel.find({userId});
         res.status(200).send(notes)
     } catch (error) {
-        res.status(500).send({message:"Error while getting the notes"}) 
+        res.status(401).send({message:"Error while getting the notes"}) 
     }
 })
 
