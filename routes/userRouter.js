@@ -35,7 +35,7 @@ userRouter.post('/login', async(req, res)=>{
                 }
                 if(result){
                     const token = jwt.sign({userId:user._id, username:user.username},
-                        process.env.secret, {expiresIn:"1h"})
+                        "masai-fullStack", {expiresIn:"1h"})
                     res.status(200).send({message: "User logged in successfully", token:token})
                 }else{
                     res.status(401).json({message:"Incorrect password"})
